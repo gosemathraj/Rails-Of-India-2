@@ -29,6 +29,7 @@
             android:inputType="text"
             android:imeOptions="actionDone"
             android:paddingLeft="@dimen/dpSize16"
+            android:paddingStart="@dimen/dpSize16"
             android:textSize="@dimen/smallText"
             android:layout_marginTop="@dimen/dpSize20"/>
 

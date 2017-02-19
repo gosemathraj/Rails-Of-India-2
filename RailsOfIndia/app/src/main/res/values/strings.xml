@@ -150,5 +150,8 @@
     <string name="clearPreferenesCleared">All Saved Pnrs Cleared</string>
     <string name="trainNameNumber">trainNameNumber</string>
     <string name="trainRouteError">Train Route Error</string>
+    <string name="no_internet">No Internet Connection</string>
+    <string name="no_internet_info">This app requires an active internet connection</string>
+    <string name="availability">Availability</string>
 
 </resources>

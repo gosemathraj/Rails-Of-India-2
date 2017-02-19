@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 
+import com.gosemathraj.railsofindia.R;
 import com.gosemathraj.railsofindia.interfaces.NetworkCallsApi;
 import com.gosemathraj.railsofindia.interfaces.OnResponseReceived;
 import com.gosemathraj.railsofindia.interfaces.RetrofitApi;
@@ -39,32 +40,38 @@ public class NetworkCallsRetrofitImpl implements NetworkCallsApi{
     @Override
     public void getDataFromServer(final Activity activity, final Fragment fragment, String url) {
 
-        RetrofitApi apiCalls = retrofit.create(RetrofitApi.class);
-        Call<ResponseBody> call = apiCalls.getDataFromServer(url);
+        if (Utils.getInstance().isNetworkConnectionAvailable(activity)) {
 
-        call.enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+            RetrofitApi apiCalls = retrofit.create(RetrofitApi.class);
+            Call<ResponseBody> call = apiCalls.getDataFromServer(url);
 
-                try {
-                    onResponseReceived = (OnResponseReceived) fragment;
-                    if(response.body() != null){
-                        onResponseReceived.onResponseReceivedFromServer(response.body().string());
-                    }else if(response.errorBody() != null){
-                        Utils.getInstance().showProgressDialog(activity,"Server error");
+            call.enqueue(new Callback<ResponseBody>() {
+                @Override
+                public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+
+                    try {
+                        onResponseReceived = (OnResponseReceived) fragment;
+                        if(response.body() != null){
+                            onResponseReceived.onResponseReceivedFromServer(response.body().string());
+                        }else if(response.errorBody() != null){
+                            Utils.getInstance().showProgressDialog(activity,"Server error");
+                        }
+                    } catch (IOException e) {
+                        Log.e(StringConstants.EXCEPTION,e.toString());
+                    } catch(ClassCastException e){
+                        Log.e(StringConstants.EXCEPTION,e.toString());
                     }
-                } catch (IOException e) {
-                    Log.e(StringConstants.EXCEPTION,e.toString());
-                } catch(ClassCastException e){
-                    Log.e(StringConstants.EXCEPTION,e.toString());
                 }
-            }
 
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Utils.getInstance().closeProgressDialog();;
-                Utils.getInstance().showAlertDialog(activity,"Server error","Server not responding");
-            }
-        });
+                @Override
+                public void onFailure(Call<ResponseBody> call, Throwable t) {
+                    Utils.getInstance().closeProgressDialog();;
+                    Utils.getInstance().showAlertDialog(activity,"Server error","Server not responding");
+                }
+            });
+
+        }else{
+            Utils.getInstance().showNoInternetAlertDialog(activity,activity.getString(R.string.no_internet),activity.getString(R.string.no_internet_info));
+        }
     }
 }

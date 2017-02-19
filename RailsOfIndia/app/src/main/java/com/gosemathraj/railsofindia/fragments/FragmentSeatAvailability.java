@@ -157,7 +157,8 @@ public class FragmentSeatAvailability extends Fragment implements OnResponseRece
             @Override
             public void onClick(View view) {
 
-                DialogFragment newFragment = new DatePickerFragment(FragmentSeatAvailability.this);
+                DatePickerFragment newFragment = new DatePickerFragment();
+                newFragment.setListener(FragmentSeatAvailability.this);
                 newFragment.show(getActivity().getSupportFragmentManager(), "datePicker");
             }
         });

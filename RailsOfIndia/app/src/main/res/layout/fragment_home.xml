@@ -80,8 +80,7 @@
                 android:layout_width="@dimen/linearHomeBox"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:gravity="center"
-                android:layout_alignParentLeft="true">
+                android:gravity="center">
 
                 <ImageView
                     android:layout_width="@dimen/homeCategoriesBox"

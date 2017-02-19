@@ -6,7 +6,8 @@ package com.gosemathraj.railsofindia.utility;
 
 public class StringConstants {
 
-    public final static String API_KEY = "5tvesoq6";
+    //public final static String API_KEY = "5tvesoq6";
+    public final static String API_KEY = "s6yamece";
     public final static String ROOT_URL = "http://api.railwayapi.com/";
 
     public final static String Train_No_Or_Name = ROOT_URL + "name_number/";

@@ -17,12 +17,9 @@ import java.util.Calendar;
 
 public class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
 
-    public DatePickerFragment() {
-    }
 
     private OnDateSet onDateSet;
-    public DatePickerFragment(Fragment fragment) {
-        this.onDateSet = (OnDateSet) fragment;
+    public DatePickerFragment() {
     }
 
     @Override
@@ -39,5 +36,9 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
     public void onDateSet(DatePicker view, int year, int month, int day) {
         String date = String.valueOf(day) + "-" + String.valueOf(month + 1) + "-" + String.valueOf(year);
         onDateSet.onDateSet(date);
+    }
+
+    public void setListener(Fragment fragment){
+        this.onDateSet = (OnDateSet) fragment;
     }
 }

@@ -20,6 +20,7 @@
         android:background="@drawable/bg_edittext_border_one"
         android:hint="@string/enter_train_number"
         android:paddingLeft="@dimen/dpSize16"
+        android:paddingStart="@dimen/dpSize16"
         android:nextFocusDown="@+id/source_station"
         android:inputType="number"
         android:textSize="@dimen/smallText"
@@ -32,6 +33,7 @@
         android:background="@drawable/bg_edittext_border_one"
         android:hint="@string/enter_source_code"
         android:paddingLeft="@dimen/dpSize16"
+        android:paddingStart="@dimen/dpSize16"
         android:inputType="text"
         android:nextFocusDown="@+id/destination_station"
         android:textSize="@dimen/smallText"
@@ -46,6 +48,7 @@
         android:inputType="text"
         android:imeOptions="actionDone"
         android:paddingLeft="@dimen/dpSize16"
+        android:paddingStart="@dimen/dpSize16"
         android:textSize="@dimen/smallText"
         android:layout_marginTop="@dimen/dpSize16"/>
 

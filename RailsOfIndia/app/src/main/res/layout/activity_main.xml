@@ -16,7 +16,7 @@
         android:id="@+id/appbar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="@dimen/standard_elevation"
+        app:elevation="@dimen/dpSize4"
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <FrameLayout
@@ -29,7 +29,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary"
-                android:elevation="@dimen/standard_elevation"
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
 
             <com.miguelcatalan.materialsearchview.MaterialSearchView

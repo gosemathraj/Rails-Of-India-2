@@ -8,10 +8,13 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -20,6 +23,8 @@ import android.widget.Toast;
 
 import com.google.gson.JsonArray;
 import com.gosemathraj.railsofindia.R;
+import com.gosemathraj.railsofindia.activities.HelperActivity;
+import com.gosemathraj.railsofindia.activities.MainActivity;
 import com.gosemathraj.railsofindia.data.Contract;
 import com.gosemathraj.railsofindia.models.TrainRoute;
 
@@ -109,27 +114,6 @@ public class Utils {
         return true;
     }
 
-    public void showCustomAlertDialog(Activity activity,String title,String message){
-
-        customDialog = new Dialog(activity);
-        customDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        customDialog.setCancelable(false);
-        customDialog.setTitle(title);
-
-        TextView dialogTitle = (TextView) customDialog.findViewById(R.id.alert_dialog_title);
-        TextView dialogMessage = (TextView) customDialog.findViewById(R.id.alert_dialog_message);
-
-        dialogTitle.setText(title);
-        dialogMessage.setText(message);
-
-        customDialog.findViewById(R.id.ok).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                customDialog.dismiss();
-            }
-        });
-    }
-
     public void saveDataInPreference(Context activity,String preferenceName, String data){
 
         SharedPreferences sharedPreferences = activity.getSharedPreferences(preferenceName, Context.MODE_PRIVATE);
@@ -215,6 +199,35 @@ public class Utils {
         );
 
         return cursor;
+    }
 
+    public boolean isNetworkConnectionAvailable(Activity activity) {
+
+        ConnectivityManager cm = (ConnectivityManager)activity.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        boolean isConnected = activeNetwork != null &&
+                activeNetwork.isConnectedOrConnecting();
+
+        return isConnected;
+    }
+
+    public void showNoInternetAlertDialog(final Activity activity, String string, String string1) {
+
+        AlertDialog dialog;
+        final AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+        builder.setTitle(string);
+        builder.setMessage(string1);
+        builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+
+                Bundle bundle = new Bundle();
+                bundle.putInt(activity.getString(R.string.fragmentId),6);
+                Utils.getInstance().startActivity(activity,bundle, HelperActivity.class);
+            }
+        });
+        dialog = builder.create();
+        dialog.show();
     }
 }

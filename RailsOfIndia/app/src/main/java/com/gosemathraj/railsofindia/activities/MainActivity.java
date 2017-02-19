@@ -57,13 +57,18 @@ public class MainActivity extends AppCompatActivity {
 
     private void init(Bundle savedInstanceState) {
 
-        setActionBar();
-        setNavigationDrawer();
-        setUpSearchView();
-        setOnClickListener();
-        if(savedInstanceState == null){
-            Utils.getInstance().addFragmentfromActivity(this,new FragmentHome(),R.id.frame_container);
+        if(Utils.getInstance().isNetworkConnectionAvailable(this)){
+            setActionBar();
+            setNavigationDrawer();
+            setUpSearchView();
+            setOnClickListener();
+            if(savedInstanceState == null){
+                Utils.getInstance().addFragmentfromActivity(this,new FragmentHome(),R.id.frame_container);
+            }
+        }else{
+            Utils.getInstance().showNoInternetAlertDialog(this,getString(R.string.no_internet),getString(R.string.no_internet_info));
         }
+
     }
 
     private void setOnClickListener() {
@@ -161,9 +166,9 @@ public class MainActivity extends AppCompatActivity {
                 Bundle bundle = new Bundle();
                 bundle.putString(getString(R.string.search_String),query);
                 materialSearchView.setQuery("",false);
-                if(Utils.getInstance().checkForNull(query) && query != null){
+
                     Utils.getInstance().startActivity(MainActivity.this,bundle,SearchActivity.class);
-                }
+
                 return true;
             }
 
@@ -172,6 +177,7 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
     }
 
     @Override

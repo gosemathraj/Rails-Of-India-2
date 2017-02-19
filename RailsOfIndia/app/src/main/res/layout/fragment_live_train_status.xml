@@ -28,6 +28,7 @@
             android:background="@drawable/bg_edittext_border_one"
             android:hint="@string/enter_train_number"
             android:paddingLeft="@dimen/dpSize16"
+            android:paddingStart="@dimen/dpSize16"
             android:inputType="number"
             android:imeOptions="actionDone"
             android:textSize="@dimen/smallText"

@@ -7,14 +7,14 @@
     <FrameLayout
         android:id="@+id/widget"
         android:layout_width="match_parent"
-        android:layout_height="48dp">
+        android:layout_height="@dimen/dpSize48">
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="@dimen/dpSize48"
             android:text="@string/widget_title"
-            android:paddingStart="16dp"
-            android:paddingLeft="16dp"
+            android:paddingStart="@dimen/dpSize16"
+            android:paddingLeft="@dimen/dpSize16"
             android:textSize="@dimen/mediumText"
             android:background="@color/colorPrimary"
             android:gravity="center_vertical"/>
