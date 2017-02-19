@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.google.android.gms.vision.text.Text;
 import com.gosemathraj.railsofindia.R;
 import com.gosemathraj.railsofindia.models.Availability;
 

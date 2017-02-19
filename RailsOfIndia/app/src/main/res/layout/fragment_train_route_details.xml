@@ -10,14 +10,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbars="none"
+        android:paddingBottom="@dimen/dpSize8"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/map_route"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:layout_gravity="bottom|right|end"
+        android:layout_gravity="bottom|end"
         android:layout_marginRight="@dimen/fab_margin"
+        android:layout_marginEnd="@dimen/dpSize16"
         android:layout_marginBottom="@dimen/fab_margin"
         android:contentDescription="@string/train_route_map"
         android:clickable="true"

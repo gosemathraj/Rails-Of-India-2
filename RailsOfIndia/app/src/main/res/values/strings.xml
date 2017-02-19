@@ -153,5 +153,19 @@
     <string name="no_internet">No Internet Connection</string>
     <string name="no_internet_info">This app requires an active internet connection</string>
     <string name="availability">Availability</string>
+    <string name="train_number_text">Train Number :</string>
+    <string name="train_name_text">Train Name :</string>
+    <string name="current_status_info">Current Status of the Train would be shown here</string>
+    <string name="saved_pnrs">Saved Pnrs</string>
+    <string name="dash">---</string>
+    <string name="time_text">Time :</string>
+    <string name="date_text">Date :</string>
+    <string name="pnr_number_text">Pnr Number :</string>
+    <string name="searchActivity">SearchActivity</string>
+    <string name="station_text">Station :</string>
+    <string name="code_text">Code :</string>
+    <string name="day_text">Day :</string>
+    <string name="arrival_text">Arrival :</string>
+    <string name="departure_text">Departure :</string>
 
 </resources>

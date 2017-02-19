@@ -92,7 +92,7 @@ public class FragmentTrainNameNumber extends Fragment implements OnResponseRecei
 
                 }else{
                     Utils.getInstance().closeProgressDialog();
-                    Utils.getInstance().showAlertDialog(getActivity(),getString(R.string.invalidInput),getString(R.string.invalidInput));
+                    Utils.getInstance().showAlertDialog(getActivity(),getString(R.string.invalidInput),getString(R.string.invalidInputMsg));
                 }
             }
         });

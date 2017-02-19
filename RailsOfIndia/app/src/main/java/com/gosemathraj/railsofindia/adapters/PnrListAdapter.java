@@ -47,7 +47,7 @@ public class PnrListAdapter extends RecyclerView.Adapter<PnrListAdapter.PnrListV
         if(pnrStatus != null){
 
             holder.trainNumberName.setText(pnrStatus.getTrainName() + " - " +pnrStatus.getTrainNumber());
-            holder.pnrNumber.setText("Pnr Number : " + pnrStatus.getPnrNumber());
+            holder.pnrNumber.setText(pnrStatus.getPnrNumber());
 
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

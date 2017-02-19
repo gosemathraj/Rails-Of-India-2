@@ -40,9 +40,6 @@ public class FragmentLiveTrainStatus extends Fragment implements OnResponseRecei
     @BindView(R.id.submit)
     ImageView submit;
 
-    @BindView(R.id.train_name_no)
-    TextView trainNameNumber;
-
     @BindView(R.id.current_status_value)
     TextView currentStatus;
 
@@ -129,9 +126,8 @@ public class FragmentLiveTrainStatus extends Fragment implements OnResponseRecei
             JSONObject jsonObject = new JSONObject(response);
             if(jsonObject != null && jsonObject.getInt("response_code") == 200){
 
-                trainNameNumber.setText("Train Number : " + jsonObject.getString("train_number"));
                 currentStatus.setText(jsonObject.getString("position"));
-                currentStation.setText("Current Station : " + jsonObject.getJSONObject("current_station").getJSONObject("station_").getString("name"));
+                currentStation.setText(jsonObject.getJSONObject("current_station").getJSONObject("station_").getString("name"));
 
             }else if(jsonObject.getInt("response_code") == 510){
                 Log.d(StringConstants.SERVERRESPONSE,response);

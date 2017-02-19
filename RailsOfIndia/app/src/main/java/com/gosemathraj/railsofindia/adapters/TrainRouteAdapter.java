@@ -43,11 +43,11 @@ public class TrainRouteAdapter extends RecyclerView.Adapter<TrainRouteAdapter.Tr
         Route route = routeList.get(position);
         if(route != null){
 
-            holder.name.setText("Station : " + route.getFullname());
-            holder.code.setText("Code : " +route.getCode());
-            holder.day.setText("Day : " + String.valueOf(route.getDay()));
-            holder.arrival.setText("Arrival : " + route.getScharr());
-            holder.departure.setText("Departure : " + route.getSchdep());
+            holder.name.setText(route.getFullname());
+            holder.code.setText(route.getCode());
+            holder.day.setText(String.valueOf(route.getDay()));
+            holder.arrival.setText(route.getScharr());
+            holder.departure.setText(route.getSchdep());
         }
 
     }

@@ -11,7 +11,6 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.google.android.gms.vision.text.Text;
 import com.gosemathraj.railsofindia.R;
 import com.gosemathraj.railsofindia.adapters.TrainsDaysAdapter;
 import com.gosemathraj.railsofindia.models.Days;
@@ -79,6 +78,7 @@ public class SearchActivity extends AppCompatActivity {
 
     private void getDetailsAboutTrain() {
 
+        Utils.getInstance().showProgressDialog(this,StringConstants.LOADING_MESSAGE);
         new FetchTrainDetails().execute();
     }
 
@@ -130,7 +130,8 @@ public class SearchActivity extends AppCompatActivity {
                 bufferString = buffer.toString();
                 return bufferString;
             } catch (IOException e) {
-                Log.e("SearchActivity", "Error ", e);
+                Log.e(getString(R.string.searchActivity),  getString(R.string.error), e);
+                Utils.getInstance().closeProgressDialog();
                 // If the code didn't successfully get the weather data, there's no point in attemping
                 // to parse it.
                 return null;
@@ -142,6 +143,7 @@ public class SearchActivity extends AppCompatActivity {
                     try {
                         reader.close();
                     } catch (final IOException e) {
+                        Utils.getInstance().closeProgressDialog();
                         Log.e(getString(R.string.SearchActivity), getString(R.string.ErrorStream), e);
                     }
                 }
@@ -152,13 +154,14 @@ public class SearchActivity extends AppCompatActivity {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
 
+            Utils.getInstance().closeProgressDialog();
             String x = s;
             try {
                 JSONObject jsonObject = new JSONObject(x);
                 if(jsonObject != null && jsonObject.getInt("response_code") == 200){
 
-                    trainName.setText("Train Name : " + jsonObject.getJSONObject("train").getString("name"));
-                    trainNO.setText("Train Number : " + jsonObject.getJSONObject("train").getString("number"));
+                    trainName.setText(jsonObject.getJSONObject("train").getString("name"));
+                    trainNO.setText(jsonObject.getJSONObject("train").getString("number"));
                     setDaysList(jsonObject.getJSONObject("train").getJSONArray("days"));
 
                     recyclerview.setLayoutManager(new LinearLayoutManager(SearchActivity.this));

@@ -97,7 +97,7 @@ public class FragmentTrainRoute extends Fragment implements OnResponseReceived{
 
                 }else{
                     Utils.getInstance().closeProgressDialog();
-                    Utils.getInstance().showAlertDialog(getActivity(),getString(R.string.invalidInput),getString(R.string.invalidInput));
+                    Utils.getInstance().showAlertDialog(getActivity(),getString(R.string.invalidInput),getString(R.string.invalidInputMsg));
                 }
             }
         });

@@ -96,7 +96,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="---"
+                android:text="@string/dash"
                 android:textColor="@color/lightBlack"/>
 
 
@@ -106,7 +106,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="---"
+                android:text="@string/dash"
                 android:textColor="@color/lightBlack"/>
 
 
@@ -116,7 +116,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="---"
+                android:text="@string/dash"
                 android:textColor="@color/lightBlack"/>
 
         </LinearLayout>
@@ -133,7 +133,7 @@
             android:id="@+id/booking_status"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="---"
+            android:text="@string/dash"
             android:layout_marginTop="8dp"
             android:textColor="@color/lightBlack"/>
 

@@ -123,7 +123,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="---" />
+                        android:text="@string/dash" />
 
                     <View
                         android:layout_width="0.5dp"
@@ -136,7 +136,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="---" />
+                        android:text="@string/dash" />
 
                     <View
                         android:layout_width="0.5dp"
@@ -149,7 +149,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="---" />
+                        android:text="@string/dash" />
 
                     <View
                         android:layout_width="0.5dp"

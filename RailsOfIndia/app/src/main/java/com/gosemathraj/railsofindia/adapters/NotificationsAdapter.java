@@ -43,8 +43,8 @@ public class NotificationsAdapter extends RecyclerView.Adapter<NotificationsAdap
         String x = notificationsList.get(position);
         if(Utils.getInstance().checkForNull(x) && x != null){
             holder.notification.setText(x.split("&&")[0]);
-            holder.date.setText("Date : " + (x.split("&&")[1]).split(",")[0]);
-            holder.time.setText("Time : " + (x.split("&&")[1]).split(",")[1]);
+            holder.date.setText((x.split("&&")[1]).split(",")[0]);
+            holder.time.setText((x.split("&&")[1]).split(",")[1]);
         }
 
 
