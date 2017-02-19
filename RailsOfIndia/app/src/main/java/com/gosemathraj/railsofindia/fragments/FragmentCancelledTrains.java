@@ -27,7 +27,7 @@ public class FragmentCancelledTrains extends Fragment {
     @BindView(R.id.webview)
     WebView webView;
 
-    private String URL = "http://indiarailinfo.com/trains/cancelled";
+    private String URL = StringConstants.CANCELLEDTRAINS;
 
     @Nullable
     @Override
@@ -47,7 +47,7 @@ public class FragmentCancelledTrains extends Fragment {
     private void init() {
 
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(getString(R.string.cancelled_trains));
-        Utils.getInstance().showProgressDialog(getActivity(),"Loading");
+        Utils.getInstance().showProgressDialog(getActivity(),getString(R.string.loading));
         webView.loadUrl(URL);
         webView.setWebViewClient(new WebViewClient(){
 

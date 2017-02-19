@@ -192,7 +192,7 @@ public class FragmentSeatAvailability extends Fragment implements OnResponseRece
                                     }));
                 }else{
                     Utils.getInstance().closeProgressDialog();
-                    Utils.getInstance().showAlertDialog(getActivity(),"Invalid Input","Please Enter Valid Input");
+                    Utils.getInstance().showAlertDialog(getActivity(),getString(R.string.invalidInput),getString(R.string.invalidInputMsg));
                 }
             }
         });
@@ -236,18 +236,18 @@ public class FragmentSeatAvailability extends Fragment implements OnResponseRece
                 seatAvailability.setDestination(jsonObject.getJSONObject("to").getString("name"));
 
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("seatAvailability",seatAvailability);
+                bundle.putSerializable(getString(R.string.seatAvailability),seatAvailability);
 
                 FragmentSeatAvailabilityDetails fragmentSeatAvailabilityDetails = new FragmentSeatAvailabilityDetails();
                 fragmentSeatAvailabilityDetails.setArguments(bundle);
                 Utils.getInstance().replaceFragmentfromActivity(getActivity(),fragmentSeatAvailabilityDetails,R.id.helper_frame_container);
             }else{
                 Log.d(StringConstants.SERVERRESPONSE,response);
-                Utils.getInstance().showAlertDialog(getActivity(),"Seat Availability Error","Server Not Responding");
+                Utils.getInstance().showAlertDialog(getActivity(),getString(R.string.seatAvailabilityError),getString(R.string.serverNotResponding));
             }
         }catch(Exception e){
             Log.e(StringConstants.EXCEPTION,e.toString());
-            Utils.getInstance().showAlertDialog(getActivity(),"Seat Availability Error","Something went wrong");
+            Utils.getInstance().showAlertDialog(getActivity(),getString(R.string.seatAvailabilityError),getString(R.string.something_wrong));
         }
     }
 

@@ -103,7 +103,7 @@ public class FragmentPnrStatus extends Fragment implements OnResponseReceived,Lo
 
         AdRequest adRequest = new AdRequest.Builder()
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                .addTestDevice("F8BBAB0E3BCB44423AD273ADC677CF57")
+                .addTestDevice(getString(R.string.testAdsDeviceId))
                 .build();
 
         adView.loadAd(adRequest);
@@ -129,7 +129,7 @@ public class FragmentPnrStatus extends Fragment implements OnResponseReceived,Lo
                                     }));
                 }else{
                     Utils.getInstance().closeProgressDialog();
-                    Utils.getInstance().showAlertDialog(getActivity(),"Invalid Input","Please Enter Valid Input");
+                    Utils.getInstance().showAlertDialog(getActivity(),getString(R.string.invalidInput),getString(R.string.invalidInputMsg));
                 }
 
             }
@@ -171,14 +171,14 @@ public class FragmentPnrStatus extends Fragment implements OnResponseReceived,Lo
 
             }else if(jsonObject.getInt("response_code") == 410){
                 Log.d(StringConstants.SERVERRESPONSE,response);
-                Utils.getInstance().showAlertDialog(getActivity(),"Pnr Status Error","Pnr not yet Generated");
+                Utils.getInstance().showAlertDialog(getActivity(),getString(R.string.pnrError),getString(R.string.pnrNotGenerated));
             }else{
                 Log.d(StringConstants.SERVERRESPONSE,response);
-                Utils.getInstance().showAlertDialog(getActivity(),"Pnr Status Error","Server Not Responding");
+                Utils.getInstance().showAlertDialog(getActivity(),getString(R.string.pnrError),getString(R.string.serverNotResponding));
             }
         } catch (JSONException e) {
             Log.e(StringConstants.EXCEPTION,e.toString());
-            Utils.getInstance().showAlertDialog(getActivity(),"Pnr Status Error","Oops Something went wrong");
+            Utils.getInstance().showAlertDialog(getActivity(),getString(R.string.pnrError),getString(R.string.something_wrong));
         }
     }
 

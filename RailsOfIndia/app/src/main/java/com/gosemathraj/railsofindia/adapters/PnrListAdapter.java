@@ -54,7 +54,7 @@ public class PnrListAdapter extends RecyclerView.Adapter<PnrListAdapter.PnrListV
                 public void onClick(View view) {
 
                     Bundle bundle = new Bundle();
-                    bundle.putSerializable("pnrStatus",pnrStatus);
+                    bundle.putSerializable(context.getString(R.string.pnrStatus),pnrStatus);
 
                     FragmentPnrStatusDetails fragmentPnrStatusDetails = new FragmentPnrStatusDetails();
                     fragmentPnrStatusDetails.setArguments(bundle);

@@ -22,4 +22,6 @@ public class StringConstants {
     public final static String TRAIN_NUMBER_TITLE = "Train Number";
     public static final String EXCEPTION = "Exception";
     public static final String SERVERRESPONSE = "Server Response";
+
+    public static final String CANCELLEDTRAINS = "http://indiarailinfo.com/trains/cancelled";
 }

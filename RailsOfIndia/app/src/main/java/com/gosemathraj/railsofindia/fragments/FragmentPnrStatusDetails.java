@@ -87,7 +87,7 @@ public class FragmentPnrStatusDetails extends Fragment{
 
         Bundle bundle = getArguments();
         if(bundle != null){
-            pnrStatus = (PnrStatus) bundle.getSerializable("pnrStatus");
+            pnrStatus = (PnrStatus) bundle.getSerializable(getString(R.string.pnrStatus));
         }
     }
 }

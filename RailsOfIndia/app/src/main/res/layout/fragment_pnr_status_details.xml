@@ -27,7 +27,7 @@
                     android:id="@+id/pnr_number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Pnr Number"
+                    android:text="@string/pnr_number"
                     android:textStyle="bold"/>
 
                 <TextView
@@ -35,7 +35,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dpSize4"
-                    android:text="Train Name"
+                    android:text="@string/pnr_train_name"
                     android:textStyle="bold" />
 
                 <TextView
@@ -43,7 +43,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/dpSize4"
-                    android:text="Train Number"
+                    android:text="@string/pnr_train_number"
                     android:textStyle="bold" />
 
                 <View
@@ -67,7 +67,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="Source"
+                        android:text="@string/source"
                         android:textStyle="bold" />
 
                     <View
@@ -80,7 +80,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="Destination"
+                        android:text="@string/destination"
                         android:textStyle="bold" />
 
                     <View
@@ -93,7 +93,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="Reserved Upto"
+                        android:text="@string/reserved_upto"
                         android:textStyle="bold" />
 
                     <View

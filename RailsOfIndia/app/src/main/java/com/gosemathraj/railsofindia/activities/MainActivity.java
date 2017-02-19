@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                 }
                 Bundle bundle = new Bundle();
-                bundle.putInt("fragmentId",fragmentId);
+                bundle.putInt(getString(R.string.fragmentId),fragmentId);
                 Utils.getInstance().startActivity(MainActivity.this,bundle, HelperActivity.class);
                 return true;
 
@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
             public boolean onQueryTextSubmit(String query) {
 
                 Bundle bundle = new Bundle();
-                bundle.putString("searchString",query);
+                bundle.putString(getString(R.string.search_String),query);
                 materialSearchView.setQuery("",false);
                 if(Utils.getInstance().checkForNull(query) && query != null){
                     Utils.getInstance().startActivity(MainActivity.this,bundle,SearchActivity.class);

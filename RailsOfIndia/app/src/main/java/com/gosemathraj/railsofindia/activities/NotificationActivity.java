@@ -65,12 +65,12 @@ public class NotificationActivity extends AppCompatActivity {
 
     private void getNotificationsFromSharedPreferences() {
 
-        notifications = Utils.getInstance().getDataFromPreference(this,"Notifications");
+        notifications = Utils.getInstance().getDataFromPreference(this,getString(R.string.Notifications));
         if(Utils.getInstance().checkForNull(notifications) && notifications != null){
             getNotificationsList();
         }else{
             noDataFound.setVisibility(View.VISIBLE);
-            Utils.getInstance().showToast(this,"No Notifications Found");
+            Utils.getInstance().showToast(this,getString(R.string.no_notifications_found));
         }
     }
 

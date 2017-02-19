@@ -74,7 +74,7 @@ public class FragmentTrainNameNumberDetails extends Fragment {
 
         Bundle bundle = getArguments();
         if(bundle != null){
-            trainNameNumber = (TrainNameNumber) bundle.getSerializable("trainNameNumber");
+            trainNameNumber = (TrainNameNumber) bundle.getSerializable(getString(R.string.trainNameNumber));
         }
 
     }

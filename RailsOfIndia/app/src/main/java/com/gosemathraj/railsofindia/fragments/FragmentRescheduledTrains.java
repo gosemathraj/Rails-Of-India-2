@@ -47,7 +47,7 @@ public class FragmentRescheduledTrains extends Fragment {
     private void init() {
 
         ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(getString(R.string.rescheduled_trains));
-        Utils.getInstance().showProgressDialog(getActivity(),"Loading");
+        Utils.getInstance().showProgressDialog(getActivity(),getString(R.string.loading));
         webView.loadUrl(URL);
         webView.setWebViewClient(new WebViewClient(){
 

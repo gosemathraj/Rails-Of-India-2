@@ -18,19 +18,19 @@
                 android:id="@+id/train_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Train Name"/>
+                android:text="@string/train_name"/>
 
             <TextView
                 android:id="@+id/train_number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Train Number"
+                android:text="@string/train_number"
                 android:layout_marginTop="@dimen/dpSize8"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Runs On"
+                android:text="@string/runs_on"
                 android:layout_marginTop="@dimen/dpSize8"/>
 
             <android.support.v7.widget.RecyclerView

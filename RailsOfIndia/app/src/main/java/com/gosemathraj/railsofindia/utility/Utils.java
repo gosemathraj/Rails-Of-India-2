@@ -95,14 +95,6 @@ public class Utils {
         activity.startActivity(intent);
     }
 
-    public void startActivityWithObjectParam(Activity activity, TrainRoute bundle, Class activityToStart){
-        Intent intent = new Intent(activity,activityToStart);
-        if(bundle != null){
-            intent.putExtra("trainRoute",bundle);
-        }
-        activity.startActivity(intent);
-    }
-
     public boolean checkForNull(String ...params){
         for(String temp :params){
             try {

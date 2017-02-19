@@ -71,7 +71,7 @@ public class FragmentTrainRoute extends Fragment implements OnResponseReceived{
     private void initAdView() {
         AdRequest adRequest = new AdRequest.Builder()
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                .addTestDevice("F8BBAB0E3BCB44423AD273ADC677CF57")
+                .addTestDevice(getString(R.string.testAdsDeviceId))
                 .build();
 
         adView.loadAd(adRequest);
@@ -97,7 +97,7 @@ public class FragmentTrainRoute extends Fragment implements OnResponseReceived{
 
                 }else{
                     Utils.getInstance().closeProgressDialog();
-                    Utils.getInstance().showAlertDialog(getActivity(),"Invalid Input","Please Enter Valid Input");
+                    Utils.getInstance().showAlertDialog(getActivity(),getString(R.string.invalidInput),getString(R.string.invalidInput));
                 }
             }
         });
@@ -131,7 +131,7 @@ public class FragmentTrainRoute extends Fragment implements OnResponseReceived{
                 trainRoute.setRoute(routeList);
 
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("trainRoute",trainRoute);
+                bundle.putSerializable(getString(R.string.trainRoute),trainRoute);
 
                 FragmentTrainRouteDetails fragmentTrainRouteDetails = new FragmentTrainRouteDetails();
                 fragmentTrainRouteDetails.setArguments(bundle);
@@ -139,7 +139,7 @@ public class FragmentTrainRoute extends Fragment implements OnResponseReceived{
                 Utils.getInstance().replaceFragmentfromActivity(getActivity(),fragmentTrainRouteDetails,R.id.helper_frame_container);
             }else{
                 Log.d(StringConstants.SERVERRESPONSE,response);
-                Utils.getInstance().showAlertDialog(getActivity(),"Train Route Error","Something went wrong");
+                Utils.getInstance().showAlertDialog(getActivity(),getString(R.string.trainRouteError),getString(R.string.something_wrong));
             }
         }catch(Exception e){
             Log.e(StringConstants.EXCEPTION,e.toString());

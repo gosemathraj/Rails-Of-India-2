@@ -98,7 +98,7 @@ public class HelperActivity extends AppCompatActivity {
     private void getIntentFromActivity() {
 
         if(getIntent() != null &&  getIntent().getExtras() != null){
-            fragmentId = getIntent().getExtras().getInt("fragmentId");
+            fragmentId = getIntent().getExtras().getInt(getString(R.string.fragmentId));
         }
     }
 

@@ -30,4 +30,5 @@
     <dimen name="titleMediumText">14sp</dimen>
     <dimen name="titleMediumBigText">16sp</dimen>
     <dimen name="standard_elevation">4dp</dimen>
+    <dimen name="dpSize64">64dp</dimen>
 </resources>

@@ -87,7 +87,7 @@ public class FragmentHome extends Fragment implements View.OnClickListener{
 
 
         Bundle bundle = new Bundle();
-        bundle.putInt("fragmentId",fragmentId);
+        bundle.putInt(getString(R.string.fragmentId),fragmentId);
         Utils.getInstance().startActivity(getActivity(),bundle, HelperActivity.class);
     }
 }

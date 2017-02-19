@@ -85,7 +85,7 @@ public class SearchActivity extends AppCompatActivity {
     private void getIntentData() {
 
         if(getIntent() != null){
-            trainNumber = getIntent().getExtras().getString("searchString");
+            trainNumber = getIntent().getExtras().getString(getString(R.string.search_String));
         }
     }
 
@@ -142,7 +142,7 @@ public class SearchActivity extends AppCompatActivity {
                     try {
                         reader.close();
                     } catch (final IOException e) {
-                        Log.e("SearchActivity", "Error closing stream", e);
+                        Log.e(getString(R.string.SearchActivity), getString(R.string.ErrorStream), e);
                     }
                 }
             }
@@ -166,7 +166,7 @@ public class SearchActivity extends AppCompatActivity {
 
                 }else{
                     Log.d(StringConstants.SERVERRESPONSE,s);
-                    Utils.getInstance().showAlertDialog(SearchActivity.this,"Error","Something went wrong");
+                    Utils.getInstance().showAlertDialog(SearchActivity.this,getString(R.string.error),getString(R.string.something_wrong));
                 }
             } catch (JSONException e) {
                 e.printStackTrace();

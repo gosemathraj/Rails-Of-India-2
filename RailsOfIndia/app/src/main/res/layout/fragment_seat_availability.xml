@@ -59,14 +59,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Select date"/>
+            android:text="@string/select_date"/>
 
         <TextView
             android:id="@+id/pick_date"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="19-02-2017"/>
+            android:text="@string/default_date"/>
 
     </LinearLayout>
 
@@ -86,8 +86,8 @@
 
     <ImageView
         android:id="@+id/submit"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
+        android:layout_width="@dimen/dpSize64"
+        android:layout_height="@dimen/dpSize64"
         android:src="@drawable/ic_check_mark_button"
         android:layout_marginTop="@dimen/dpSize20"
         android:layout_gravity="center"

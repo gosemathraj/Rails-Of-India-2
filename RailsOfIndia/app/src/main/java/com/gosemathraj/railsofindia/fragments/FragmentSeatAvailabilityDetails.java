@@ -93,7 +93,7 @@ public class FragmentSeatAvailabilityDetails extends Fragment {
 
         Bundle bundle = getArguments();
         if(bundle != null){
-            seatAvailability = (SeatAvailability) bundle.getSerializable("seatAvailability");
+            seatAvailability = (SeatAvailability) bundle.getSerializable(getString(R.string.seatAvailability));
         }
     }
 }

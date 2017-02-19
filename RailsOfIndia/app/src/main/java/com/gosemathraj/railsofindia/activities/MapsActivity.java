@@ -48,7 +48,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private void getIntentData() {
 
         if(getIntent() != null){
-            trainRoute = (TrainRoute) getIntent().getSerializableExtra("trainRoute");
+            trainRoute = (TrainRoute) getIntent().getSerializableExtra(getString(R.string.trainRoute));
         }
     }
 

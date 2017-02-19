@@ -92,7 +92,7 @@ public class FragmentTrainNameNumber extends Fragment implements OnResponseRecei
 
                 }else{
                     Utils.getInstance().closeProgressDialog();
-                    Utils.getInstance().showAlertDialog(getActivity(),"Invalid Input","Please Enter Valid Input");
+                    Utils.getInstance().showAlertDialog(getActivity(),getString(R.string.invalidInput),getString(R.string.invalidInput));
                 }
             }
         });
@@ -101,7 +101,7 @@ public class FragmentTrainNameNumber extends Fragment implements OnResponseRecei
     private void initAdView() {
         AdRequest adRequest = new AdRequest.Builder()
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                .addTestDevice("F8BBAB0E3BCB44423AD273ADC677CF57")
+                .addTestDevice(getString(R.string.testAdsDeviceId))
                 .build();
 
         adView.loadAd(adRequest);
@@ -122,7 +122,7 @@ public class FragmentTrainNameNumber extends Fragment implements OnResponseRecei
                 trainNameNumber.setDaysList(setDaysList(jsonObject.getJSONObject("train").getJSONArray("days")));
 
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("trainNameNumber",trainNameNumber);
+                bundle.putSerializable(getString(R.string.trainNameNumber),trainNameNumber);
 
                 FragmentTrainNameNumberDetails fragmentTrainNameNumberDetails = new FragmentTrainNameNumberDetails();
                 fragmentTrainNameNumberDetails.setArguments(bundle);
@@ -131,7 +131,7 @@ public class FragmentTrainNameNumber extends Fragment implements OnResponseRecei
 
             }else{
                 Log.d(StringConstants.SERVERRESPONSE,response);
-                Utils.getInstance().showAlertDialog(getActivity(),"Error","Something went wrong");
+                Utils.getInstance().showAlertDialog(getActivity(),getString(R.string.error),getString(R.string.something_wrong));
             }
         } catch (JSONException e) {
             Log.e(StringConstants.EXCEPTION,e.toString());

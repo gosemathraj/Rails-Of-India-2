@@ -76,13 +76,13 @@ public class FragmentSettings extends Fragment {
 
         AlertDialog dialog;
         final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle("Clear Notifications");
-        builder.setMessage("Do you really want to clear notifications ?");
+        builder.setTitle(R.string.clearNotifications);
+        builder.setMessage(R.string.clearNotificationsWarn);
         builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
 
-                Utils.getInstance().clearSharedPreferences(getActivity(),"Notifications");
-                Utils.getInstance().showToast(getActivity(),"All Notifications Cleared");
+                Utils.getInstance().clearSharedPreferences(getActivity(),getString(R.string.notifications));
+                Utils.getInstance().showToast(getActivity(),getString(R.string.notificationsCleared));
             }
         });
         builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
@@ -98,13 +98,13 @@ public class FragmentSettings extends Fragment {
 
         AlertDialog dialog;
         final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle("Clear Saved Preferences");
-        builder.setMessage("Do you really want to clear saved Pnrs ?");
+        builder.setTitle(R.string.clearPreferences);
+        builder.setMessage(R.string.clearPreferencesError);
         builder.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
 
                 getActivity().getContentResolver().delete(Contract.PnrEntry.CONTENT_URI,null,null);
-                Utils.getInstance().showToast(getActivity(),"All Saved Pnrs Cleared");
+                Utils.getInstance().showToast(getActivity(),getString(R.string.clearPreferenesCleared));
             }
         });
         builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {

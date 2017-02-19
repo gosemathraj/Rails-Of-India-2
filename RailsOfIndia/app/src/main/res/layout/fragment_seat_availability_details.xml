@@ -23,13 +23,13 @@
                     android:id="@+id/train_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Train Name"/>
+                    android:text="@string/train_name"/>
 
                 <TextView
                     android:id="@+id/train_number"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Train Number"
+                    android:text="@string/train_number"
                     android:layout_marginTop="@dimen/dpSize4"/>
 
                 <LinearLayout
@@ -43,14 +43,14 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Class"/>
+                        android:text="@string/classlevel"/>
 
                     <TextView
                         android:id="@+id/category"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Category"/>
+                        android:text="@string/category"/>
 
                 </LinearLayout>
 
@@ -76,7 +76,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="Source"
+                        android:text="@string/source"
                         android:textStyle="bold" />
 
                     <View
@@ -89,7 +89,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="Destination"
+                        android:text="@string/destination"
                         android:textStyle="bold" />
 
                     <View
@@ -175,7 +175,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Sr No." />
+                    android:text="@string/sr_no" />
 
                 <View
                     android:layout_width="0.5dp"
@@ -187,7 +187,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Date" />
+                    android:text="@string/date" />
 
                 <View
                     android:layout_width="0.5dp"
@@ -199,7 +199,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:text="Status" />
+                    android:text="@string/status" />
 
                 <View
                     android:layout_width="0.5dp"

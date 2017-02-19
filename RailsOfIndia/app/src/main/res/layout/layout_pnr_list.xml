@@ -18,7 +18,7 @@
             android:id="@+id/train_name_no"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Train Number"
+            android:text="@string/train_name"
             android:textStyle="bold"/>
 
         <View
@@ -32,7 +32,7 @@
             android:id="@+id/pnr_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pnr Number"
+            android:text="@string/pnr_number"
             android:textStyle="bold"/>
 
     </LinearLayout>

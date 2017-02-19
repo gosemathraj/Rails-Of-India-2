@@ -66,7 +66,7 @@ public class FragmentTrainRouteDetails extends Fragment {
             public void onClick(View view) {
 
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("trainRoute",trainRoute);
+                bundle.putSerializable(getString(R.string.trainRoute),trainRoute);
 
                 Utils.getInstance().startActivity(getActivity(),bundle,MapsActivity.class);
             }
@@ -82,7 +82,7 @@ public class FragmentTrainRouteDetails extends Fragment {
     private void getData() {
         Bundle bundle = getArguments();
         if(bundle != null){
-            trainRoute = (TrainRoute) bundle.getSerializable("trainRoute");
+            trainRoute = (TrainRoute) bundle.getSerializable(getString(R.string.trainRoute));
         }
     }
 }

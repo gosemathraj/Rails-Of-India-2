@@ -47,13 +47,13 @@
                         android:id="@+id/train_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Train Name"/>
+                        android:text="@string/train_name"/>
 
                     <TextView
                         android:id="@+id/train_number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Train Number"
+                        android:text="@string/train_number"
                         android:layout_marginTop="@dimen/dpSize8"/>
 
                     <TextView
@@ -70,8 +70,6 @@
                         android:layout_marginTop="@dimen/dpSize8"/>
 
                 </LinearLayout>
-
-
 
             </android.support.v7.widget.CardView>
 
