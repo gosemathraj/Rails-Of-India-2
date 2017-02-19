@@ -2,4 +2,32 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="dpSize16">16dp</dimen>
+    <dimen name="dpSize4">4dp</dimen>
+    <dimen name="dpSize10">10dp</dimen>
+    <dimen name="dpSize30">30dp</dimen>
+    <dimen name="titleText">18sp</dimen>
+    <dimen name="dpSize8">8dp</dimen>
+    <dimen name="relativeHomeBox">36dp</dimen>
+    <dimen name="linearHomeBox">120dp</dimen>
+    <dimen name="homeCategoriesBox">64dp</dimen>
+    <dimen name="dpSize20">20dp</dimen>
+    <dimen name="dpSize24">24dp</dimen>
+    <dimen name="dpSize28">28dp</dimen>
+    <dimen name="bigText">28sp</dimen>
+    <dimen name="editTextBox">36dp</dimen>
+    <dimen name="smallText">14sp</dimen>
+    <dimen name="textviewBox">48dp</dimen>
+    <dimen name="bigIcon">48dp</dimen>
+    <dimen name="smallIcon">24dp</dimen>
+    <dimen name="dpSize48">48dp</dimen>
+    <dimen name="logoBox">84dp</dimen>
+    <dimen name="submitMarkerBox">64dp</dimen>
+    <dimen name="dpSize32">32dp</dimen>
+    <dimen name="mediumText">22sp</dimen>
+    <dimen name="dpSize2">2dp</dimen>
+    <dimen name="titleMediumText">14sp</dimen>
+    <dimen name="titleMediumBigText">16sp</dimen>
+    <dimen name="standard_elevation">4dp</dimen>
 </resources>

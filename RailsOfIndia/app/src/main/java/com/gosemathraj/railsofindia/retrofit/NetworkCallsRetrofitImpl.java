@@ -2,15 +2,15 @@ package com.gosemathraj.railsofindia.retrofit;
 
 import android.app.Activity;
 import android.support.v4.app.Fragment;
-import android.widget.Toast;
+import android.util.Log;
 
 import com.gosemathraj.railsofindia.interfaces.NetworkCallsApi;
+import com.gosemathraj.railsofindia.interfaces.OnResponseReceived;
 import com.gosemathraj.railsofindia.interfaces.RetrofitApi;
 import com.gosemathraj.railsofindia.utility.StringConstants;
+import com.gosemathraj.railsofindia.utility.Utils;
 
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -26,42 +26,44 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class NetworkCallsRetrofitImpl implements NetworkCallsApi{
 
     private Retrofit retrofit;
+    private OnResponseReceived onResponseReceived;
 
-    @Override
-    public void getDataFromServer(final Activity activity, final Fragment fragment, String url, final String Callback) {
+    public NetworkCallsRetrofitImpl() {
 
         retrofit = new Retrofit.Builder()
                 .baseUrl(StringConstants.ROOT_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
+    }
+
+    @Override
+    public void getDataFromServer(final Activity activity, final Fragment fragment, String url) {
 
         RetrofitApi apiCalls = retrofit.create(RetrofitApi.class);
-
         Call<ResponseBody> call = apiCalls.getDataFromServer(url);
 
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
 
-                Method method = null;
                 try {
-                    method = fragment.getClass().getDeclaredMethod(
-                            Callback, new Class[]{String.class});
-                    method.invoke(fragment, response.body().string());
-                } catch (NoSuchMethodException e) {
-                    e.printStackTrace();
-                } catch (IllegalAccessException e) {
-                    e.printStackTrace();
+                    onResponseReceived = (OnResponseReceived) fragment;
+                    if(response.body() != null){
+                        onResponseReceived.onResponseReceivedFromServer(response.body().string());
+                    }else if(response.errorBody() != null){
+                        Utils.getInstance().showProgressDialog(activity,"Server error");
+                    }
                 } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (InvocationTargetException e) {
-                    e.printStackTrace();
+                    Log.e(StringConstants.EXCEPTION,e.toString());
+                } catch(ClassCastException e){
+                    Log.e(StringConstants.EXCEPTION,e.toString());
                 }
             }
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Toast.makeText(activity,"error ",Toast.LENGTH_LONG).show();
+                Utils.getInstance().closeProgressDialog();;
+                Utils.getInstance().showAlertDialog(activity,"Server error","Server not responding");
             }
         });
     }

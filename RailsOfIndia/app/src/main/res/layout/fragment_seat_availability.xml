@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/dpSize16">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/seat_availability_info"
+        android:background="@color/dullWhite"
+        android:textColor="@color/lightBlack"
+        android:padding="@dimen/dpSize16"/>
+
+
+    <EditText
+        android:id="@+id/train_number"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/editTextBox"
+        android:background="@drawable/bg_edittext_border_one"
+        android:hint="@string/enter_train_number"
+        android:paddingLeft="@dimen/dpSize16"
+        android:nextFocusDown="@+id/source_station"
+        android:inputType="number"
+        android:textSize="@dimen/smallText"
+        android:layout_marginTop="@dimen/dpSize16"/>
+
+    <EditText
+        android:id="@+id/source_station"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/editTextBox"
+        android:background="@drawable/bg_edittext_border_one"
+        android:hint="@string/enter_source_code"
+        android:paddingLeft="@dimen/dpSize16"
+        android:inputType="text"
+        android:nextFocusDown="@+id/destination_station"
+        android:textSize="@dimen/smallText"
+        android:layout_marginTop="@dimen/dpSize16"/>
+
+    <EditText
+        android:id="@+id/destination_station"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/editTextBox"
+        android:background="@drawable/bg_edittext_border_one"
+        android:hint="@string/enter_destination_code"
+        android:inputType="text"
+        android:imeOptions="actionDone"
+        android:paddingLeft="@dimen/dpSize16"
+        android:textSize="@dimen/smallText"
+        android:layout_marginTop="@dimen/dpSize16"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/dpSize16">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Select date"/>
+
+        <TextView
+            android:id="@+id/pick_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="19-02-2017"/>
+
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/quota"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dpSize48"
+        android:layout_marginTop="@dimen/dpSize16"
+        android:background="@drawable/bg_edittext_border_one"/>
+
+    <Spinner
+        android:id="@+id/class_level"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dpSize48"
+        android:layout_marginTop="@dimen/dpSize16"
+        android:background="@drawable/bg_edittext_border_one"/>
+
+    <ImageView
+        android:id="@+id/submit"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/ic_check_mark_button"
+        android:layout_marginTop="@dimen/dpSize20"
+        android:layout_gravity="center"
+        android:contentDescription="@string/input_submit"/>
+
+</LinearLayout>

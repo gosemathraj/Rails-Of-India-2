@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/dpSize16">
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/train_route_info"
+        android:background="@color/dullWhite"
+        android:textColor="@color/lightBlack"
+        android:padding="@dimen/dpSize16"/>
+
+    <EditText
+        android:id="@+id/train_number"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/editTextBox"
+        android:background="@drawable/bg_edittext_border_one"
+        android:hint="@string/enter_train_number"
+        android:inputType="number"
+        android:imeOptions="actionDone"
+        android:paddingLeft="@dimen/dpSize16"
+        android:textSize="@dimen/smallText"
+        android:layout_marginTop="@dimen/dpSize20"/>
+
+    <ImageView
+        android:id="@+id/submit"
+        android:layout_width="@dimen/submitMarkerBox"
+        android:layout_height="@dimen/submitMarkerBox"
+        android:src="@drawable/ic_check_mark_button"
+        android:layout_marginTop="@dimen/dpSize32"
+        android:layout_gravity="center"
+        android:contentDescription="@string/input_submit"/>
+
+    </LinearLayout>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        android:layout_alignParentBottom="true"
+        ads:adUnitId="@string/banner_footer">
+    </com.google.android.gms.ads.AdView>
+
+</RelativeLayout>

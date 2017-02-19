@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/group1" android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/cancelled_trains"
+            android:icon="@drawable/ic_cancel"
+            android:title="@string/cancelled_trains" />
+
+        <item
+            android:id="@+id/rescheduled_trains"
+            android:icon="@drawable/ic_repeat"
+            android:title="@string/rescheduled_trains" />
+
+        <item
+            android:id="@+id/facts"
+            android:icon="@drawable/ic_notebook"
+            android:title="@string/facts" />
+
+        <item
+            android:id="@+id/settings"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/settings" />
+
+        <item
+            android:id="@+id/about"
+            android:icon="@drawable/ic_list"
+            android:title="@string/about" />
+
+    </group>
+
+</menu>

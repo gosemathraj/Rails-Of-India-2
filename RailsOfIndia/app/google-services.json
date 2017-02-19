@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "165583335543",
+    "firebase_url": "https://rails-of-india-7f087.firebaseio.com",
+    "project_id": "rails-of-india-7f087",
+    "storage_bucket": "rails-of-india-7f087.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165583335543:android:556e694f3bef2407",
+        "android_client_info": {
+          "package_name": "com.gosemathraj.railsofindia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165583335543-7qvmneqecqphrpmb0kd0ict2qn422221.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAB9Sdj_6pJ47bTqRqYT5GWNHlCUTHjtq8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/relativeHomeBox">
+
+        <RelativeLayout
+            android:id="@+id/relative_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/pnr_linear"
+                android:layout_width="@dimen/linearHomeBox"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <ImageView
+                    android:layout_width="@dimen/homeCategoriesBox"
+                    android:layout_height="@dimen/homeCategoriesBox"
+                    android:src="@drawable/ic_information"
+                    android:contentDescription="@string/pnr_info"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pnr_status"
+                    android:textColor="@color/colorPrimary"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/dpSize8"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/live_train_status_linear"
+                android:layout_width="@dimen/linearHomeBox"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true">
+
+                <ImageView
+                    android:layout_width="@dimen/homeCategoriesBox"
+                    android:layout_height="@dimen/homeCategoriesBox"
+                    android:src="@drawable/ic_train_status"
+                    android:contentDescription="@string/train_status_info"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/train_status"
+                    android:textColor="@color/colorPrimary"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/dpSize8"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/relative_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relative_one"
+            android:layout_marginTop="@dimen/dpSize28"
+            android:gravity="center">
+
+            <LinearLayout
+                android:id="@+id/train_name_number_linear"
+                android:layout_width="@dimen/linearHomeBox"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_alignParentLeft="true">
+
+                <ImageView
+                    android:layout_width="@dimen/homeCategoriesBox"
+                    android:layout_height="@dimen/homeCategoriesBox"
+                    android:src="@drawable/ic_calendar"
+                    android:contentDescription="@string/train_name_number"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/trains_name_no"
+                    android:textColor="@color/colorPrimary"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/dpSize8"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative_three"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/relative_two"
+            android:layout_marginTop="@dimen/dpSize28">
+
+            <LinearLayout
+                android:id="@+id/train_route_linear"
+                android:layout_width="@dimen/linearHomeBox"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <ImageView
+                    android:layout_width="@dimen/homeCategoriesBox"
+                    android:layout_height="@dimen/homeCategoriesBox"
+                    android:src="@drawable/ic_route"
+                    android:contentDescription="@string/train_route_info"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/train_route"
+                    android:textColor="@color/colorPrimary"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/dpSize8"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/seat_availability_linear"
+                android:layout_width="@dimen/linearHomeBox"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true">
+
+                <ImageView
+                    android:layout_width="@dimen/homeCategoriesBox"
+                    android:layout_height="@dimen/homeCategoriesBox"
+                    android:src="@drawable/ic_armchair"
+                    android:contentDescription="@string/seat_availability"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/seat_availability"
+                    android:textColor="@color/colorPrimary"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/dpSize8"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

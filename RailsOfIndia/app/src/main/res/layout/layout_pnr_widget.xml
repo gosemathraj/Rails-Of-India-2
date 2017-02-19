@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/widget"
+        android:layout_width="match_parent"
+        android:layout_height="48dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="@string/widget_title"
+            android:paddingStart="16dp"
+            android:paddingLeft="16dp"
+            android:textSize="@dimen/mediumText"
+            android:background="@color/colorPrimary"
+            android:gravity="center_vertical"/>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/dpSize16"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/train_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dpSize4"
+            android:text="Train Name"
+            android:textStyle="bold"
+            android:textColor="@color/lightBlack"/>
+
+        <TextView
+            android:id="@+id/train_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dpSize4"
+            android:text="Train Number"
+            android:textStyle="bold"
+            android:textColor="@color/lightBlack"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dpSize30"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Source"
+                android:textStyle="bold"
+                android:textColor="@color/lightBlack"/>
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Destination"
+                android:textStyle="bold"
+                android:textColor="@color/lightBlack"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Reserved Upto"
+                android:textStyle="bold"
+                android:textColor="@color/lightBlack"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dpSize30"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:id="@+id/source"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="---"
+                android:textColor="@color/lightBlack"/>
+
+
+            <TextView
+                android:id="@+id/destination"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="---"
+                android:textColor="@color/lightBlack"/>
+
+
+            <TextView
+                android:id="@+id/reserved_upto"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="---"
+                android:textColor="@color/lightBlack"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Booking Status"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/lightBlack"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/booking_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="---"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/lightBlack"/>
+
+    </LinearLayout>
+
+</LinearLayout>

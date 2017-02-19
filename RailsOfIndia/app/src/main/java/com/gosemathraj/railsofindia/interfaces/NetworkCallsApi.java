@@ -9,5 +9,5 @@ import android.support.v4.app.Fragment;
 
 public interface NetworkCallsApi {
 
-    void getDataFromServer(Activity activity, Fragment fragment, String url, String Callback);
+    void getDataFromServer(Activity activity, Fragment fragment, String url);
 }

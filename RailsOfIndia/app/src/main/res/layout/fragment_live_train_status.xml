@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:padding="@dimen/dpSize16">
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/train_status_info"
+            android:background="@color/dullWhite"
+            android:textColor="@color/lightBlack"
+            android:padding="@dimen/dpSize16"/>
+
+        <EditText
+            android:id="@+id/train_number"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/editTextBox"
+            android:background="@drawable/bg_edittext_border_one"
+            android:hint="@string/enter_train_number"
+            android:paddingLeft="@dimen/dpSize16"
+            android:inputType="number"
+            android:imeOptions="actionDone"
+            android:textSize="@dimen/smallText"
+            android:layout_marginTop="@dimen/dpSize20"/>
+
+        <ImageView
+            android:id="@+id/submit"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/ic_check_mark_button"
+            android:layout_marginTop="@dimen/dpSize20"
+            android:layout_gravity="center"
+            android:contentDescription="@string/input_submit"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/resultView"
+            android:layout_height="wrap_content"
+            android:text="Results"
+            android:background="@color/dullWhite"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/dpSize48"
+            android:textColor="@color/lightBlack"
+            android:padding="@dimen/dpSize16"/>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dpSize16">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/dpSize16">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Current Status"/>
+
+                <TextView
+                    android:id="@+id/train_name_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Train Name Number"
+                    android:layout_marginTop="@dimen/dpSize8"/>
+
+                <TextView
+                    android:id="@+id/current_status_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dpSize8"
+                    android:text="Current Status of the Train would be shown here"
+                    android:background="@color/lightBlack"
+                    android:textColor="@color/white"
+                    android:padding="@dimen/dpSize16"/>
+
+                <TextView
+                    android:id="@+id/current_station"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Current Station"
+                    android:layout_marginTop="@dimen/dpSize8"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ads:adSize="BANNER"
+        android:layout_alignParentBottom="true"
+        ads:adUnitId="@string/banner_footer">
+    </com.google.android.gms.ads.AdView>
+
+</RelativeLayout>

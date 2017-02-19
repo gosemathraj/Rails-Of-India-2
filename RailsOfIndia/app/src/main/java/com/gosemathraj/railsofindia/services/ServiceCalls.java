@@ -26,8 +26,7 @@ public class ServiceCalls {
         this.networkCallsimpl = networkCallsimpl;
     }
 
-    public String getDataFromServer(Activity activity, Fragment fragment, String url, String callback){
-        networkCallsimpl.getDataFromServer(activity,fragment,url,callback);
-        return null;
+    public void getDataFromServer(Activity activity, Fragment fragment, String url){
+        networkCallsimpl.getDataFromServer(activity,fragment,url);
     }
 }
